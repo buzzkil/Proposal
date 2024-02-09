@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: #e60000;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <p>Dear [Crush's Name],</p>
+    <p>On this special day, I want to ask if you would be my Valentine. Your answer would mean the world to me.</p>
+    <button id="yesButton" onclick="sendResponse('Yes')">Yes, I'd love to!</button>
+    <button id="noButton" onclick="sendResponse('No')">Sorry, I can't</button>
+
+    <script>
+        function sendResponse(response) {
+            if (response === 'Yes') {
+                document.getElementById('yesButton').style.fontSize = '20px';
+                alert('That\'s wonderful! Happy Valentine\'s Day!');
+            } else {
+                var noButton = document.getElementById('noButton');
+                noButton.style.width = (noButton.offsetWidth - 10) + 'px';
+                noButton.style.height = (noButton.offsetHeight - 5) + 'px';
+                setTimeout(function() {
+                    noButton.style.display = 'none';
+                }, 500);
+                alert('No worries. Happy Valentine\'s Day!');
+            }
+        }
+    </script>
+</body>
+</html>
